@@ -1,6 +1,6 @@
 package DataRestTest;
 
-import DataRest.Animals;
+import AnimalDatabase.DataRest.Animals;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

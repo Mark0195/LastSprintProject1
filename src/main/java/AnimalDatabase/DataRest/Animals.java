@@ -1,4 +1,4 @@
-package DataRest;
+package AnimalDatabase.DataRest;
 
 import javax.persistence.*;
 
@@ -8,7 +8,7 @@ public class Animals {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String animals;
-    private String common_name;
+    private String commonName;
 
     public long getId() {
         return id;
@@ -27,10 +27,10 @@ public class Animals {
     }
 
     public String getCommon_name() {
-        return common_name;
+        return commonName;
     }
 
     public void setCommon_name(String common_name) {
-        this.common_name = common_name;
+        this.commonName = common_name;
     }
 }
