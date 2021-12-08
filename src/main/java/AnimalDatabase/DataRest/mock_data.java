@@ -3,7 +3,7 @@ package AnimalDatabase.DataRest;
 import javax.persistence.*;
 
 @Entity
-public class Animals {
+public class mock_data {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

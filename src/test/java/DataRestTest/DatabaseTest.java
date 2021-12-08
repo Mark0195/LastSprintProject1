@@ -1,6 +1,6 @@
 package DataRestTest;
 
-import AnimalDatabase.DataRest.Animals;
+import AnimalDatabase.DataRest.mock_data;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 public class DatabaseTest {
     @Test
     void testAnimals() {
-        Animals actualAnimals = new Animals();
+        mock_data actualAnimals = new mock_data();
         actualAnimals.setAnimals("Tockus erythrorhyncus");
         actualAnimals.setCommon_name("Red-billed hornbill");
         actualAnimals.setId(1);
@@ -20,7 +20,7 @@ public class DatabaseTest {
 
     @Test
     void testAnimalsNotEqual(){
-        Animals actualAnimals = new Animals();
+        mock_data actualAnimals = new mock_data();
         actualAnimals.setAnimals("Tockus erythrorhyncus");
         actualAnimals.setCommon_name("Red-billed hornbill");
         actualAnimals.setId(1);
