@@ -11,5 +11,5 @@ import java.util.List;
 public interface SearchRepo extends PagingAndSortingRepository<searchtable, List> {
     List<searchtable> findById(@Param("id") long id);
     List<searchtable> findByEmail(@Param("email") String email);
-    List<searchtable> findBySearch(@Param("search") String search);
+    List<searchtable> findBySearched(@Param("searched") String searched);
 }
