@@ -1,4 +1,4 @@
-package AnimalDatabase;
+package AnimalDatabase.Configs;
 
 public class PasswordConfiguration {
 }
