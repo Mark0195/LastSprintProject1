@@ -42,15 +42,15 @@ public class DatabaseTest {
         assertEquals("Searched", actualSearchtable.getSearched());
     }
 
-        @Test
-        void testPassConstructor() {
-            passwordtable actualPasswordtable = new passwordtable();
-            actualPasswordtable.setEmail("jane.doe@example.org");
-            actualPasswordtable.setId(123L);
-            actualPasswordtable.setPassword("iloveyou");
-            assertEquals("jane.doe@example.org", actualPasswordtable.getEmail());
-            assertEquals(123L, actualPasswordtable.getId());
-            assertEquals("iloveyou", actualPasswordtable.getPassword());
+    @Test
+    void testPassConstructor() {
+        passwordtable actualPasswordtable = new passwordtable();
+        actualPasswordtable.setEmail("jane.doe@example.org");
+        actualPasswordtable.setId(123L);
+        actualPasswordtable.setPassword("iloveyou");
+        assertEquals("jane.doe@example.org", actualPasswordtable.getEmail());
+        assertEquals(123L, actualPasswordtable.getId());
+        assertEquals("iloveyou", actualPasswordtable.getPassword());
 
     }
 }
