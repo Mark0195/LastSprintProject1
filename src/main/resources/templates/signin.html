@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="signin.css">
 </head>
 <body>
-    <form method="POST" action="/signin">
+    <form method="POST" th:action="@{/signin}" th:object="${signin}">
         <h1>Welcome to the Safari!</h1>
         <p> Where all your dreams come true</p>
         <input type="email" id="email" name="email" placeholder="Email">

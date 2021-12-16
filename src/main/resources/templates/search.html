@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="search.css">
 </head>
 <body>
-    <a href="/logout"><button type="submit">Logout</button></a>
-    <form method="POST" action="/search">
+    <form method="POST" action="#" th:action="@{/results}" th:object="${results}">
         <h1>Lets find an animal!</h1>
         <p>Type an animal name:</p>
-        <input type="search" id="search" name="search" placeholder="Search...">
+        <input type="search" th:field="*{animals}" placeholder="Search...">
         <p>Choose your database:</p>
         <select type="text" id="database" name="database">
             <option value="Postgres">Postgres</option>
@@ -22,28 +21,28 @@
         <button type="submit">Search</button>
 
 
-        <ul>
-            {% if postgresList %}
-                {% for post in post %}
-                    <li>Postgres: {{ post.post }}</li>
-                {% endfor %}
-            {% endif %}
-        </ul>
-        <ul>
-            {% if mysqlList %}
-                {% for MySql in MySql %}
-                    <li>MySQL: {{ mysql.mysql }}</li>
-                {% endfor %}
-            {% endif %}
-        </ul>
-        <ul>
-            {% if bothList %}
-                {% for both in both %}
-                    <li>Postgres: {{ both.both }}</li>
-                    <li>MySql: {{ both.both }}</li>
-                {% endfor %}
-            {% endif %}
-        </ul>
+<!--        <ul>-->
+<!--            {% if postgresList %}-->
+<!--                {% for post in post %}-->
+<!--                    <li>Postgres: {{ post.post }}</li>-->
+<!--                {% endfor %}-->
+<!--            {% endif %}-->
+<!--        </ul>-->
+<!--        <ul>-->
+<!--            {% if mysqlList %}-->
+<!--                {% for MySql in MySql %}-->
+<!--                    <li>MySQL: {{ mysql.mysql }}</li>-->
+<!--                {% endfor %}-->
+<!--            {% endif %}-->
+<!--        </ul>-->
+<!--        <ul>-->
+<!--            {% if bothList %}-->
+<!--                {% for both in both %}-->
+<!--                    <li>Postgres: {{ both.both }}</li>-->
+<!--                    <li>MySql: {{ both.both }}</li>-->
+<!--                {% endfor %}-->
+<!--            {% endif %}-->
+<!--        </ul>-->
     </form>
 </body>
 </html>

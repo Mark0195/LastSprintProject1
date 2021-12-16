@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org">
 <title>Results</title>
 <head>
     <link rel="stylesheet" href="">
@@ -8,23 +8,23 @@
 <body>
 <div align="center">
     <h1>Results</h1>
-    <span>Database: </span><span th:text="${search.database}"></span></br>
-    <span>Search Topic: </span><span th:text="${search.topic}"></span>
+    <span>Database Picked: </span><span th:text="${search.database}"></span></br>
+    <span>Search Topic is: </span><span th:text="${search.search}"></span>
 
     <table border="0=1" cellpadding="10">
         <thead>
         <tr>
-            <th>id</th>
-            <th>animals</th>
-            <th>common_name</th>
+            <th>Id</th>
+            <th>Animals</th>
+            <th>Common Name</th>
 
         </tr>
         </thead>
         <tbody>
         <tr th:each="animal: ${listAnimals}">
-            <td th:text="${animal.id}">ID</td>
-            <td th:text="${animal.animals}">Animals</td>
-            <td th:text="${animal.common_name}">Common Name</td>
+            <td th:text="${mock_data.id}">ID</td>
+            <td th:text="${mock_data.animals}">Animals</td>
+            <td th:text="${mock_data.common_name}">Common Name</td>
 
         </tr>
         </tbody>
