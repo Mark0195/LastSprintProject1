@@ -1,7 +1,7 @@
 package AnimalDatabase.Controller;
 
 import AnimalDatabase.Repo.AnimalsRepo;
-import AnimalDatabase.DataRest.mock_data;
+import AnimalDatabase.DataRest.Mock_data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +20,9 @@ public class WorksController {
 
 
     @GetMapping("/animal")
-    public ResponseEntity<List<mock_data>> getAllAnimals(@RequestParam(required = false) String animals) {
+    public ResponseEntity<List<Mock_data>> getAllAnimals(@RequestParam(required = false) String animals) {
         try {
-            List<mock_data> mock = new ArrayList<mock_data>();
+            List<Mock_data> mock = new ArrayList<Mock_data>();
             if (animals == null)
                 animalsRepo.findAll().forEach(mock::add);
             else
@@ -37,17 +37,17 @@ public class WorksController {
         }
     }
     @GetMapping(value = "/animal/{animal_id}", produces = "application/json")
-    public ResponseEntity<mock_data> getAnimalsByAnimal_Id(@PathVariable("id") long id) {
-        Optional<mock_data> id1 = animalsRepo.findById(id);
+    public ResponseEntity<Mock_data> getAnimalsByAnimal_Id(@PathVariable("id") long id) {
+        Optional<Mock_data> id1 = animalsRepo.findById(id);
         return id1.map(animal -> new ResponseEntity<>(animal, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping("/animal")
-    public ResponseEntity<mock_data> createAnimals(@RequestBody mock_data animal) {
+    public ResponseEntity<Mock_data> createAnimals(@RequestBody Mock_data animal) {
         try {
-            mock_data _animal = animalsRepo
-                    .save(new mock_data(animal.getId(),
-                            animal.getAnimals(), animal.getCommon_name()));
+            Mock_data _animal = animalsRepo
+                    .save(new Mock_data(animal.getId(),
+                            animal.getAnimals(), animal.getCommonName()));
             return new ResponseEntity<>(_animal, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

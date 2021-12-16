@@ -3,20 +3,20 @@ package AnimalDatabase.DataRest;
 import javax.persistence.*;
 
 @Entity
-public class mock_data {
+public class Mock_data {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String animals;
     private String commonName;
 
-    public mock_data(long id, String animals, String common_name) {
+    public Mock_data(long id, String animals, String commonName) {
         this.id = id;
         this.animals = animals;
-        this.commonName = common_name;
+        this.commonName = commonName;
     }
 
-    public mock_data() {
+    public Mock_data() {
 
     }
 
@@ -36,11 +36,19 @@ public class mock_data {
         this.animals = animals;
     }
 
-    public String getCommon_name() {
+    public String getCommonName() {
         return commonName;
     }
 
-    public void setCommon_name(String common_name) {
-        this.commonName = common_name;
+    public void setCommonName(String commonName) {
+        this.commonName = commonName;
     }
+
+//    public String getCommon_name() {
+//        return commonName;
+//    }
+//
+//    public void setCommon_name(String common_name) {
+//        this.commonName = common_name;
+//    }
 }

@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="search.css">
 </head>
 <body>
-    <form method="POST" action="#" th:action="@{/results}" th:object="${results}">
+    <form method="POST" action="#" th:action="@{/search}" th:object="${search}">
         <h1>Lets find an animal!</h1>
         <p>Type an animal name:</p>
-        <input type="search" th:field="*{animals}" placeholder="Search...">
+        <input type="text" th:field="*{topic}" placeholder="Search...">
         <p>Choose your database:</p>
         <select type="text" id="database" name="database">
             <option value="Postgres">Postgres</option>

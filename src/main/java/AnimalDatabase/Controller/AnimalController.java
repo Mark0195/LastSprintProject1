@@ -21,39 +21,39 @@ public class AnimalController {
 
     @GetMapping(path = "/signin")
     public String getSignIn(Model model) {
-        passwordtable user = new passwordtable();
+        Passwordtable user = new Passwordtable();
         model.addAttribute("user", user);
         return "signin";
     }
 
     @GetMapping(path = "/signup")
     public String getSignUp(Model model) {
-        passwordtable user = new passwordtable();
+        Passwordtable user = new Passwordtable();
         model.addAttribute("user", user);
         return "signup";
     }
 
-    @GetMapping(path = "/search")
-    public String submitUser(@ModelAttribute("user")passwordtable table, Model model) {
+    @GetMapping(path = "/passsearch")
+    public String submitUser(@ModelAttribute("user") Passwordtable table, Model model) {
         System.out.println(table);
-        mock_data search = new mock_data();
+        Mock_data search = new Mock_data();
         model.addAttribute("search", search);
         return "search";
 
     }
     @PostMapping(path = "/search")
-    public String getResults(@ModelAttribute("search")mock_data search, Model model) {
-        List<mock_data> listAnimals = new ArrayList<mock_data>();
-        animalsRepo.findByCommonName(search.getCommon_name()).forEach(listAnimals::add);
+    public String getResults(@ModelAttribute("search") Search search, Model model) {
+        List<Mock_data> listAnimals = new ArrayList<Mock_data>();
+        animalsRepo.findByCommonName(search.getTopic()).forEach(listAnimals::add);
         model.addAttribute("listAnimals", listAnimals);
         System.out.println(listAnimals);
         return "results";
+    }
 
-        //    @GetMapping(path = "/search")
-//    public String getSearch(Model model) {
-//        mock_data search = new mock_data();
-//        model.addAttribute("search", search);
-//        return "search.html";
-//    }
-}
+    @GetMapping(path = "/search")
+    public String getSearch(Model model) {
+        Search search = new Search();
+        model.addAttribute("search", search);
+        return "search";
+    }
 }
