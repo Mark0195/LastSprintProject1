@@ -1,6 +1,7 @@
 package DataRestTest;
 
 import AnimalDatabase.DataRest.Mock_data;
+import AnimalDatabase.DataRest.Search;
 import AnimalDatabase.DataRest.Searchtable;
 import AnimalDatabase.DataRest.Passwordtable;
 import org.junit.jupiter.api.Test;
@@ -52,5 +53,19 @@ public class DatabaseTest {
         assertEquals(123L, actualPasswordtable.getId());
         assertEquals("iloveyou", actualPasswordtable.getPassword());
 
+    }
+
+    @Test
+    void testSearch() {
+        Search actualSearch = new Search();
+        actualSearch.setTopic("Topic");
+        assertEquals("Topic", actualSearch.getTopic());
+    }
+
+    @Test
+    void testSearch2() {
+        Search actualSearch = new Search("Topic");
+        actualSearch.setTopic("Topic");
+        assertNotEquals("Topic", actualSearch.getTopic());
     }
 }
